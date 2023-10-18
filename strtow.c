@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <stdlib.h>
 
 /**
  * **strtow - Splits a string into words using specified delimiters.
@@ -27,7 +28,7 @@ char **strtow(char *str, char *d)
     if (numwords == 0)
         return NULL;
 
-    s = malloc((1 + numwords) * sizeof(char *);
+    s = malloc((1 + numwords) * sizeof(char *));
     if (!s)
         return NULL;
 
@@ -84,13 +85,13 @@ char **strtow2(char *str, char d)
     if (numwords == 0)
         return NULL;
 
-    s = malloc((1 + numwords) * sizeof(char *);
+    s = malloc((1 + numwords) * sizeof(char *));
     if (!s)
         return NULL;
 
     for (i = 0, j = 0; j < numwords; j++)
     {
-        while (str[i] == d && str[i] != d)
+        while (str[i] == d)
             i++;
 
         k = 0;
@@ -115,3 +116,4 @@ char **strtow2(char *str, char d)
     s[j] = NULL;
     return s;
 }
+
