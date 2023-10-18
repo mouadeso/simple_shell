@@ -13,8 +13,8 @@ int bfree(void **ptr)
 {
     if (ptr && *ptr)
     {
-        free(*ptr);    // Free the memory.
-        *ptr = NULL;   // Set the pointer to NULL.
+        free(*ptr);   
+        *ptr = NULL;   
         return 1;
     }
     return 0;
